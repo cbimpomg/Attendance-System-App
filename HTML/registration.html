@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Registration</title>
+	<meta charset="utf-8">
+	
+	
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<style>
+	*{
+	  margin: 0;
+	  padding: 0;	
+	}
+</style>
+<body >
+	<div class="form-content">
+		<form class="form-detail" id="registerform">
+			<h2>Register Account Form</h2>
+			
+			<div class="form-floating mb-2">
+				<input type="text" name="first-name" id="first-name" class="form-control" placeholder="Your First Name"
+					required>
+				<label for="first-name">First Name</label>
+				<span id="fnameError" style="color: red; display:none;"> your First Name is invalid</span>
+			</div>
+
+
+			<div class="form-floating mb-2">
+				<input type="text" name="Last-name" id="Last-name" class="form-control " placeholder="Your Last Name"
+					required>
+				<label for="Last-name">Last Name</label>
+				<span id="lnameError" style="color: red; display:none;"> your Last Name is invalid</span>
+			</div>
+
+			<div class="form-floating mb-2">
+				<input type="text" name="address" id="address" class="form-control" placeholder="Your Address" required>
+				<label for="address">Address</label>
+				<span id="addressError" style="color: red; display:none;"> your Address is invalid</span>
+			</div>
+			<div class="form-floating mb-2">
+				<input type="email" name="your-email" id="your-email" class="form-control" placeholder="Your Email"
+					required>
+				<label for="your-email">Your Email</label>
+				<span id="emailError" style="color: red; display:none;">
+					your Email Must to be in this format example@domain.com</span>
+			</div>
+			<div class="form-floating mb-2">
+				<input type="number" min="20" name="age" id="age" class="form-control" placeholder="Your Age" required>
+				<label for="age">Age</label>
+				<span id="ageError" style="color: red; display:none;"> your Age is invalid</span>
+			</div>
+			<div class="form-row-last mb-2">
+				<input type="submit" name="Register" id="submitBtn" class="BtnForm w-100 text-white" value="Register">
+			</div>
+			
+			<a href="./login.html" class="d-block w-100 BtnForm text-decoration-none">
+				Do you have an account ? Log In
+			</a>
+			
+		</form>
+	</div>
+
+
+
+
+</body>
+</html>
