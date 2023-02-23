@@ -2,11 +2,13 @@
 padding: 0;
 margin: 0;
 box-sizing: border-box;
+
 }
 
 body{
 font-family: 'Poppins', sans-serif;
 overflow: hidden;
+background-color: #f7f7f7;
 }
 
 .wave{
@@ -103,7 +105,7 @@ position: absolute;
 bottom: -2px;
 width: 0%;
 height: 2px;
-background-color: #38d39f;
+background-color: #2B3467;
 transition: .4s;
 }
 
@@ -125,7 +127,7 @@ font-size: 15px;
 }
 
 .input-div.focus > .i > i{
-color: #38d39f;
+color: #2B3467;
 }
 
 .input-div > div > input{
@@ -157,7 +159,7 @@ transition: .3s;
 }
 
 a:hover{
-color: #38d39f;
+color: #2B3467;
 }
 
 .btn{
@@ -167,7 +169,7 @@ height: 50px;
 border-radius: 25px;
 outline: none;
 border: none;
-background-image: linear-gradient(to right, #32be8f, #38d39f, #32be8f);
+background-image: linear-gradient(to right, #2B3467, #BAD7E9, #EB455F);
 background-size: 200%;
 font-size: 1.2rem;
 color: #fff;
