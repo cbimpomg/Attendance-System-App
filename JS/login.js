@@ -38,6 +38,7 @@ function login()
     {
           if (username==ObjEmployee[i].username && passwd==ObjEmployee[i].passwd)
           {
+            window.location.assign("../HTML/home.html")
             console.log(username+"is logged in :) ")
             return
           }
@@ -74,5 +75,7 @@ var newEmployee={
     }
    }
   ObjEmployee.push(newEmployee)
+  window.location.assign("../HTML/home.html")
   console.log(ObjEmployee)
+  return
 }
