@@ -1,0 +1,145 @@
+body{
+    overflow-x:visible;
+    margin: 0;
+    padding: 0
+}
+
+.navbar {
+    width: 100%;
+  background-color: rgb(19, 20, 20) ;
+  box-shadow: 0 0 15px 0px rgba(31, 148, 15, 0.5);
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+  padding: 1px;
+
+}
+.container,
+.container-fluid{
+  width: 100%;
+}
+
+.nav-link {
+  display: block;
+  padding: 0.5rem 1rem;
+  color: #ffffff;
+}
+.nav-link:focus,
+.nav-link:hover {
+  color: #a0a1a3;
+   box-shadow: 0 0 15px 0px rgba(31, 148, 15, 0.5);
+}
+.nav-link.active {
+  color: #818c97;
+  box-shadow: 0 0 15px 0px rgba(31, 148, 15, 0.5);
+}
+
+.navbar-nav {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  list-style: none;
+}
+
+.navbar-collapse {
+  flex-basis: 100%;
+  flex-grow: 1;
+  align-items: center;
+}
+
+@media (min-width: 768px) {
+  .navbar{
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+  }
+  .navbar .navbar-nav {
+    flex-direction: row;
+  }
+}
+
+.mainwrapper {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.text-center{
+    height: 30%;
+    width: 70%;
+}
+.icon i {
+  font-size: 100px;
+  color: rgb(207, 228, 245);
+}
+.form-group {
+  background-color: #fff;
+  vertical-align: middle;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+  padding: 50px 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+}
+#usernametext{
+    width:100%;
+  line-height: 2;
+  color: #270d0d;
+  display: flex;
+  vertical-align: middle;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+  padding: 1px 6px;
+  border-width:1px;
+}
+.inputButton{
+    width:100%;
+    height: 50px;
+    display: flex;
+  line-height: 2;
+  color: #270d0d;
+  font-size: large;
+  position: relative;
+  vertical-align: middle;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  background-color:yellowgreen;
+  padding-top: 5px;
+  margin-top: 5px;
+  border-width:0px;
+}
+.modal {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1050;
+  display: none;
+  overflow: hidden;
+  outline: 0;
+}
+
+.modal-content {
+  position: relative;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  width: 100%;
+  pointer-events: auto;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 0.3rem;
+  outline: 0;
+}
