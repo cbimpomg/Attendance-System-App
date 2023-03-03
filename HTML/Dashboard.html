@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Attendance Dashboard</title>
+    <link rel="stylesheet" href="DashboardStyle.css" />
+    <!-- Font Awesome Cdn Link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+</head>
+
+<body>
+    <div class="container">
+        <nav>
+            <ul>
+                <li><a href="#" class="logo">
+                        <img src="images/admin.jpg">
+                        <span class="nav-item">Admin</span>
+                    </a></li>
+                <li><a href="#">
+                        <i class="fas fa-menorah"></i>
+                        <span class="nav-item">Dashboard</span>
+                    </a></li>
+                <li><a href="#">
+                        <i class="fas fa-comment"></i>
+                        <span class="nav-item">Message</span>
+                    </a></li>
+                <li><a href="#">
+                        <i class="fas fa-database"></i>
+                        <span class="nav-item">Report</span>
+                    </a></li>
+                <li><a href="AdminPanel.html">
+                        <i class="fas fa-chart-bar"></i>
+                        <span class="nav-item">Attendance</span>
+                    </a></li>
+                <li><a href="#">
+                        <i class="fas fa-cog"></i>
+                        <span class="nav-item">Setting</span>
+                    </a></li>
+
+                <li><a href="#" class="logout">
+                        <i class="fas fa-sign-out-alt"></i>
+                        <span class="nav-item">Log out</span>
+                    </a></li>
+            </ul>
+        </nav>
+
+
+        <section class="main">
+            <div class="main-top">
+                <h1>Dashboard</h1>
+                <i class="fas fa-user-cog"></i>
+            </div>
+
+            <div class="users">
+                <div class="card">
+                    <img src="images/Coder.png">
+                    <h4>Nasr Abdelazeez</h4>
+                    <p>Ui designer</p>
+                    <button>Profile</button>
+                </div>
+
+                <div class="card">
+                    <img src="images/Coder.png">
+                    <h4>Mahmoud Abdelwahab</h4>
+                    <p>DevOps Engineer</p>
+                    <button>Profile</button>
+                </div>
+
+                <div class="card">
+                    <img src="images/female coder.jpg">
+                    <h4>Nada Marei</h4>
+                    <p>DevOps Engineer</p>
+                    <button>Profile</button>
+                </div>
+
+                <div class="card">
+                    <img src="images/Coder.png">
+                    <h4>Mohamed Sharief</h4>
+                    <p>DevOps Engineer</p>
+                    <button>Profile</button>
+                </div>
+            </div>
+
+            <div class="charts">
+                <div class="charts-card">
+                    <p class="chart-title"> Time </p>
+                    <div id="bar-chart"></div>
+                </div>
+                <div class="charts-card">
+                    <p class="chart-title"> Attendance overview</p>
+                    <div id="area-chart"></div>
+                </div>
+            </div>
+
+
+        </section>
+        </section>
+    </div>
+    <!----------Scripts--------->
+<!---------Apex Charts liberary--------->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/apexcharts/3.37.1/apexcharts.min.js"></script>
+<script src="Dashboard.js"></script>
+
+</body>
+
+</html>
