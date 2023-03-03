@@ -1,0 +1,192 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="../css/bootstrap.min.css" rel="stylesheet">
+<link rel="icon" href="../img/2.png">
+<script src="../js/bootstrap.bundle.min.js"></script>
+<script src="../node_modules/sweetalert2/dist/sweetalert2.min.js"></script>
+<link rel="stylesheet" href="../node_modules/sweetalert2/dist/sweetalert2.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <title>Attendance Page</title>
+    <style>
+      .navbar
+      {
+        height: 80px;
+        background-color: rgb(39, 69, 94);
+      }
+        .text-center
+        {
+          margin-top: 130px;
+        }
+        .center
+        {
+            margin:10px auto;
+            padding: auto;
+
+        }
+        #main
+        {
+          width: 100%;
+          padding:0px 0px 20px ;
+        }
+        
+        
+    </style>
+    
+  </head>
+  <body>
+<nav class="navbar navbar-expand navbar-dark  fixed-top">
+  <div class="container ">
+   <div class="navbar-nav col-12">
+     <div class="col nav-item active h3 m-3  ">
+      <a class="nav-link text-warning" href="#">Attendance</a>
+     </div>
+     <div class="col nav-item  m-3">
+      <a class="nav-link active h4" aria-current="page" href="home.html">Home</a>
+     </div>
+     <div class=" col nav-item  m-3">
+      <a class="nav-link active h4" aria-current="page" href="profile.html">Profile</a>
+     </div>
+     <div class=" col nav-item  m-3">
+      <a class="nav-link active h4" aria-current="page" href="report.html">Reports</a>
+     </div>
+     <div class=" col nav-item  m-3">
+      <a class="nav-link active h4" aria-current="page" href="adminpanel.html">Admin Panel</a>
+     </div>
+     <div class=" col nav-item  m-3 ">
+      <a class="nav-link btn btn-lg btn-danger btn-outline-danger text-white " id="logout">Log Out</a>
+     </div>
+   </div>
+  </div>
+</nav>
+    <div class="container-fluid  " id="main">
+      <div class=" text-center">
+        <div >
+          <img src="../img/1.png" style="width: 200px;" class="col-12 img-fluid" alt="">
+        </div>
+        <main>
+          <form >
+            <div class="form-floating">
+              <input type="text" class="form-control-lg mt-4 px-4 " id="username"placeholder="Username" >
+            </div>
+                <button class="btn btn-lg btn-success px-5 center  " type="button" id="Confirm"><span class="" > Confirm Attendance</span></button>
+            
+            <p class="mt-4 mb-3 text-muted">&copy; Mostafa Elshnhab</p>
+          </form>
+        </main>
+      </div>
+    </div>
+
+    <script>
+      var username="";
+      var empname=""
+      var btn="";
+      var arr2=[];
+      let data=[];
+      var time="";
+     var user = document.getElementById('username');
+      btn=document.getElementById('Confirm');
+      var logout=document.getElementById("logout")
+      logout.addEventListener("click",function(){
+        localStorage.login="false";
+        localStorage.removeItem("username");
+        window.location.replace("../index.html");
+      })
+      window.addEventListener('load',function(){
+        
+      })//nd of load
+      
+        btn.addEventListener('click',function(){
+          getdata();
+        })//end of event
+      function getdata()
+      {
+        var xhr = new XMLHttpRequest();
+        var xhr2 = new XMLHttpRequest();
+        var repoid=0;
+					xhr.open("get", 'http://localhost:3000/users');
+					xhr2.open("get", 'http://localhost:3000/reports');
+          xhr2.onload=function(){arr2=JSON.parse(xhr2.responseText);
+              repoid=arr2[i].id+1;
+            }
+					xhr.onload = function() 
+          {
+						arr = JSON.parse(xhr.responseText);
+            for (let i = 0; i < arr.length; i++) {
+              if(arr[i].username==user.value)
+              { 
+                username.value="";
+                const datehours =8;
+                 var today = new Date();
+                  var date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
+                  time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+                  var cominghour= today.getHours();
+                  var abce=0;
+                  var late = 0;
+                  var att=1;
+                  if ((cominghour-datehours)>1) {
+                    abce= 1;
+                    att=0;
+                    }
+                    if ((cominghour-datehours)==1) {
+                        late=1;
+                    }
+                   empname=arr[i].fname +" "+ arr[i].lname;
+                   usernamesend = arr[i].username
+                   jsarray = [usernamesend,time];
+                   sessionStorage.setItem("jsArray", JSON.stringify(jsarray));
+                   
+                   data={
+                          "id":repoid,
+                           "userid":arr[i].id,
+                            "date":date,
+                            "time":time,
+                            "attendance":att,
+                            "late":late,
+                            "excuse":0,
+                            "absencetim":abce
+                         }   
+                   
+                  senddata(data)                  
+                  return
+              }//end of if 
+              else
+              {
+                 Swal.fire({
+                  icon: 'error',
+                  title: 'Oops...',
+                  text: 'Something went wrong!',
+                })//end of allert
+              }
+            }//end of loop 
+					};//end of onload function 
+					xhr.send();
+          xhr2.send();          
+      }//end of getdata fun
+      function senddata(da)
+      {        
+        $.ajax({
+						url: 'http://localhost:3000/reports',
+						type: 'post',
+						dataType: 'json',
+						contentType: 'application/json',
+						success: function (data) {
+                    Swal.fire({
+                    title: '<strong>your data saved</strong>',
+                    icon: 'success',
+                    html:`<p class="h4">Employee Name: ${empname}</p>`+`<p class="h4">Attendance Time: ${time}</p>`,
+                    showCloseButton: false,
+                    showCancelButton: false,
+                    focusConfirm: false,
+                    confirmButtonText:'Close!',
+                  })// end of alert 
+						},
+						data: JSON.stringify(da)
+					});
+      }
+          
+    </script>
+  </body>
+</html>

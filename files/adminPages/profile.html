@@ -1,0 +1,418 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="../css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="../css/font-awesome.css">
+<link rel="icon" href="../img/5.png">
+<script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
+    <title>Profile Page</title>
+    <style>
+      .navbar
+      {
+        height: 80px;
+        background-color: rgb(39, 69, 94);
+      }
+      #footer
+      {
+        background-color: rgb(39, 69, 94);
+      }
+      body{
+    margin-top:20px;
+    color: #1a202c;
+    text-align: left;
+    background-color: #e2e8f0;    
+}
+.main-body {
+    padding: 15px;
+}
+.card {
+    box-shadow: 0 1px 3px 0 rgba(0,0,0,.1), 0 1px 2px 0 rgba(0,0,0,.06);
+}
+
+.card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background-color: #fff;
+    background-clip: border-box;
+    border: 0 solid rgba(0,0,0,.125);
+    border-radius: .25rem;
+}
+
+.card-body {
+    flex: 1 1 auto;
+    min-height: 1px;
+    padding: 1rem;
+}
+
+.gutters-sm {
+    margin-right: -8px;
+    margin-left: -8px;
+}
+
+.gutters-sm>.col, .gutters-sm>[class*=col-] {
+    padding-right: 8px;
+    padding-left: 8px;
+}
+.mb-3, .my-3 {
+    margin-bottom: 1rem!important;
+}
+
+.bg-gray-300 {
+    background-color: #e2e8f0;
+}
+.h-100 {
+    height: 100%!important;
+}
+.shadow-none {
+    box-shadow: none!important;
+}
+
+    </style>
+    <script>
+ window.addEventListener("load",function()
+        {
+            var empname=document.getElementById("name");
+            var username= document.getElementById("username");
+            var address= document.getElementById("address");
+            var email= document.getElementById("email");
+            var age= document.getElementById("age");
+            var username2= document.getElementById("username2");
+            var catig= document.getElementById("categry");
+            var attendancetime= document.getElementById("attime");
+            var attendancetimes= document.getElementById("attimes");
+            var latimes= document.getElementById("lates");
+            var latime= document.getElementById("late");
+            var abscetime= document.getElementById("absc");
+            var abscetimes= document.getElementById("abscs");
+            var excuse = document.getElementById("excuse");
+            var excuses = document.getElementById("excuses");
+            var seruser=""
+            jsarray2 = JSON.parse(sessionStorage.getItem("jsArray2"));
+            var logout=document.getElementById("logout")
+              logout.addEventListener("click",function(){
+                localStorage.login="false";
+                localStorage.removeItem("username");
+                window.location.replace("../regester/index.html");
+              })
+            var arr2=[];
+                        var emptype="";
+                        var xhr = new XMLHttpRequest();
+                        xhr.open("get", `http://localhost:3000/users`);
+                        xhr.onload = function() {
+                        var arr = JSON.parse(xhr.responseText);
+                            for (let i = 0; i < arr.length; i++) {
+                            if(arr[i].username==jsarray2[0])
+                            {
+                              switch (arr[i].flag) {
+                               case 0:
+                                   emptype="Just Employee";
+                                   break;
+                                case 1:
+                                    emptype="Sub Admin";
+                                    break;
+                                case 2:
+                                    emptype="Admin";
+                                   break;
+                           }
+                           const time = "8"
+                           var timhatend=new Date(`${jsarray2[2]}:2021`).getHours()
+                           var latee="no";
+                           var excusess="no";
+                           var absencettt="no";
+                           if ((timhatend-time)==1) {
+                              latee="yes";
+                           }
+                           if((timhatend-time)>1)
+                           {
+                             latee="no";
+                             excusess="no";
+                             absencettt="yes";
+                           }
+                                $.getJSON(`http://localhost:3000/reports/?userid=${arr[i].id}`, function(json) {
+                                arr2=json;
+                                var attendanctime =0;
+                                var latetime =0;
+                                var absencetime=0;
+                                var excusetims=0;
+                                for (let g = 0; g < arr2.length; g++) {
+                                    if (arr[i].id==arr2[g].userid) {
+                                        attendanctime = attendanctime + arr2[g].attendance;
+                                        latetime =latetime + arr2[g].late
+                                        absencetime =absencetime + arr2[g].absencetim
+                                        excusetims=excusetims +arr2[g].excuse
+                                    }
+                                }
+                                var fullname =(arr[i].fname).charAt(0).toUpperCase()+(arr[i].fname).slice(1)+" "+(arr[i].lname).charAt(0).toUpperCase()+(arr[i].lname).slice(1);
+                                empname.innerText=fullname;
+                                username.innerText= jsarray2[0];
+                                address.innerText=arr[i].address;
+                                email.innerText=arr[i].email;
+                                age.innerText=arr[i].age;
+                                attendancetime.value=jsarray2[2];
+                                username2.innerText=arr[i].username;
+                                catig.innerText=emptype;
+                                attendancetimes.value=attendanctime;
+                                latimes.value=latetime;
+                                latime.value=latee;
+                                abscetime.value=absencettt;
+                                abscetimes.value=absencetime;
+                                excuse.value=excusess;
+                                excuses.value=excusetims;
+                                
+                            });
+                                    
+                                
+                            }
+                            }
+                        };
+                        xhr.send();
+                    } )//end of load
+    </script>
+  </head>
+  <body>
+<nav class="navbar navbar-expand navbar-dark  fixed-top">
+  <div class="container">
+   <ul class="navbar-nav col-12">
+     <li class="col nav-item  h4 m-3  ">
+      <a class="nav-link  active" href="attendance.html">Attendance</a>
+     </li>
+     <li class="col nav-item  m-3">
+      <a class="nav-link active  h4" aria-current="page" href="home.html">Home</a>
+     </li>
+     <li class=" col nav-item  m-3">
+      <a class="nav-link active text-warning h3" aria-current="page" href="#">Profile</a>
+     </li>
+     <li class=" col nav-item  m-3">
+      <a class="nav-link active  h4" aria-current="page" href="report.html">Reports</a>
+     </li>
+     <li class=" col nav-item  m-3">
+      <a class="nav-link active h4" aria-current="page" href="adminpanel.html">Admin Panel</a>
+     </li>
+     <li class=" col nav-item  m-3 ">
+      <a class="nav-link btn btn-lg btn-danger btn-outline-danger text-white " id="logout">Log Out</a>
+     </li>
+   </ul>
+  </div>
+</nav>
+<div class="container" style="margin-top: 100px;">
+  <div class="main-body">
+        <div class="row gutters-sm">
+          <div class="col-md-4 mb-3">
+            <div class="card">
+              <div class="card-body">
+                <div class="d-flex flex-column align-items-center text-center">
+                  <div class="mt-3">
+                    <h2 id="name">name</h2>
+                    <p id="username2" class="text-muted h5">username</p>
+                    <p id="categry" class="text-success h5">categry</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="card mt-4 p-3">
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
+                  <i class="fa fa-facebook-f text-primary fa-2x"></i>
+                  <span class="text-secondary">www.elshnhab.com</span>
+                </li>
+                <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
+                 <i class="fa fa-twitter text-info fa-2x" ></i>
+                  <span class="text-secondary">elshhab12.github.com/</span>
+                </li>
+                <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
+                  <i class="fa fa-google text-danger fa-2x"></i>
+                  <span class="text-secondary">twitter.com/MElshnhab</span>
+                </li>
+                <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
+               <i class="fa fa-instagram text-black fa-2x"></i>
+                  <span class="text-secondary">www.instagram.com/elshnhab/</span>
+                </li>
+                <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
+                  <i class="fa fa-linkedin text-primary fa-2x"></i>
+                  <span class="text-secondary">www.linkedin.com/in/mostafa-elshnhab/</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-md-8">
+            <div class="card mb-3">
+              <div class="card-body">
+                <div class="row">
+                  <div class="col-sm-3">
+                    <h6  class="mb-0">username</h6>
+                  </div>
+                  <div id="username" class="col-sm-9 text-secondary">
+                   username
+                  </div>
+                </div>
+                <hr>
+                <div class="row">
+                  <div class="col-sm-3">
+                    <h6 class="mb-0">Email</h6>
+                  </div>
+                  <div id="email" class="col-sm-9 text-secondary">
+                    email
+                  </div>
+                </div>
+                <hr>
+                <div class="row">
+                  <div class="col-sm-3">
+                    <h6 class="mb-0">Address</h6>
+                  </div>
+                  <div id="address" class="col-sm-9 text-secondary">
+                    address
+                  </div>
+                </div>
+                <hr>
+                <div class="row">
+                  <div class="col-sm-3">
+                    <h6 class="mb-0">Age</h6>
+                  </div>
+                  <div id="age" class="col-sm-9 text-secondary">
+                   Age
+                  </div>
+                </div>
+                <hr>
+              </div>
+            </div>
+
+            <div class="row gutters-sm">
+              <div class="col-sm-6 mb-3">
+                <div class="card h-100">
+                  <div class="card-body">
+                    <h4 class="d-flex align-items-center mb-3"><i class="material-icons text-info mr-2">Daily&nbsp;</i>Attendance</h4>
+                    <h5 class="text-primary">Attendance Time:</h5>
+                    <div class="">
+                      <input type="text" id="attime" value="" class="form-control  mb-2 text-dark  "  disabled>
+                    </div>
+                    <h5 class="text-primary">Late:</h5>
+                    <div class="">
+                      <input type="text" id="late" value="" class="form-control  mb-2 text-dark  "  disabled>
+                    </div>
+                    <h5 class="text-primary">Excuse:</h5>
+                    <div class="">
+                      <input type="text" id="excuse" value="" class="form-control  mb-2 text-dark  "  disabled>
+                    </div>
+                    <h5 class="text-primary">Absencet:</h5>
+                    <div class="">
+                      <input type="abcent" id="absc" value="" class="form-control  mb-2 text-dark  "  disabled>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-6 mb-3">
+                <div class="card h-100">
+                  <div class="card-body">
+                    <h4 class="d-flex align-items-center mb-3"><i class="material-icons text-info mr-2">Monthly&nbsp;</i>Attendance</h4>
+                    <h5 class="text-primary">Attendance Times:</h5>
+                    <div class="">
+                      <input type="text" id="attimes" value="" class="form-control  mb-2 text-dark  "  disabled>
+                    </div>
+                    <h5 class="text-primary">Late Times:</h5>
+                    <div class="">
+                      <input type="text" id="lates" value="" class="form-control  mb-2 text-dark  "  disabled>
+                    </div>
+                    <h5 class="text-primary">Excuse Times:</h5>
+                    <div class="">
+                      <input type="text" id="excuses" value="" class="form-control  mb-2 text-dark  "  disabled>
+                    </div>
+                    <h5 class="text-primary">Absencet Times:</h5>
+                    <div class="">
+                      <input type="abcent" id="abscs" value="" class="form-control  mb-2 text-dark  "  disabled>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+  </div>
+  <footer class="text-center text-lg-start  text-muted" id="footer">
+    <section
+      class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom"
+    >
+      <div class="me-5 d-none d-lg-block">
+      <span class="h4 text-white ">Get connected with us on social networks:</span>
+      </div>
+      <div>
+        <a href="" class="me-4 text-reset ">
+          <i class="fa fa-facebook-f text-white fa-2x"></i>
+        </a>
+        <a href="" class="me-4 text-reset">
+          <i class="fa fa-twitter text-white fa-2x" ></i>
+        </a>
+        <a href="" class="me-4 text-reset">
+          <i class="fa fa-google text-white fa-2x"></i>
+        </a>
+        <a href="" class="me-4 text-reset">
+          <i class="fa fa-instagram text-white fa-2x"></i>
+        </a>
+        <a href="" class="me-4 text-reset">
+          <i class="fa fa-linkedin text-white fa-2x"></i>
+        </a>
+        <a href="" class="me-4 text-reset">
+          <i class="fa fa-github text-white fa-2x"></i>
+        </a>
+      </div>
+    </section>
+  
+    <section class="">
+      <div class="container text-center text-md-start mt-5">
+        <div class="row mt-3">
+          <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+            <h5 class="text-uppercase fw-bold mb-4 text-warning">
+              <i class="fas fa-gem me-3"></i>Elshnhab Company
+            </h5>
+            <p class="text-white">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+              Cumque ducimus voluptate enim veniam assumenda eligendi aut reprehenderit.
+            </p>
+          </div>
+          <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+            <!-- Links -->
+            <h5 class="text-uppercase fw-bold mb-4 text-warning">
+              pages links
+            </h5>
+            <p>
+              <a href="../sign-in/index.html" class=" text-white">Login</a>
+            </p>
+            <p>
+              <a href="../regester/index.html" class=" text-white">Regester</a>
+            </p>
+            <p>
+              <a href="profile.html" class=" text-white">Profile</a>
+            </p>
+            <p>
+              <a href="#" class=" text-white">Home</a>
+            </p>
+          </div>
+          <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+            <h5 class="text-uppercase fw-bold mb-4 text-warning">
+              Contact
+            </h5>
+            <p><i class="fa fa-home me-3 text-white"></i><span class="text-info"> Elmahala Elkopra, mohebstret, Eg</span></p>
+            <p>
+              <i class="fa fa-envelope me-3 text-white"></i>
+           <span class="text-info"> mostafaelshnhab11@gmail.com</span>
+            </p>
+            <p><i class="fa fa-phone me-3 text-white"></i><span class="text-info">01552518561</span> </p>
+            <p><i class="fa fa-whatsapp me-3 text-white"></i><span class="text-info">01009642687</span> </p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05);">
+      <p class="mt-5 mb-3 text-muted ">&copy; Mostafa Elshnhab</p>
+    </div>
+  </footer>
+  <script src="../js/JQuery-3.3.1.min.js"></script>
+    <script src="../js/popper.js"></script>
+    <script src="../js/bootstrap.js"></script>
+  </body>
+</html>

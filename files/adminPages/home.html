@@ -1,0 +1,178 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="../css/bootstrap.min.css" rel="stylesheet">
+<link rel="icon" href="../img/4.png">
+<link rel="stylesheet" href="../css/font-awesome.css">
+<script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
+    <title>Home Page</title>
+    <style>
+      .navbar
+      {
+        height: 80px;
+        background-color: rgb(39, 69, 94);
+      }
+      #footer
+      {
+        background-color: rgb(39, 69, 94);
+      }
+
+    </style>
+    <script>
+      window.addEventListener("load",function(){
+        var logout=document.getElementById("logout")
+      logout.addEventListener("click",function(){
+        localStorage.login="false";
+        localStorage.removeItem("username");
+        window.location.replace("../index.html");
+      })
+      })
+    </script>
+  </head>
+  <body >
+<nav class="navbar navbar-expand navbar-dark  fixed-top">
+  <div class="container">
+   <div class="navbar-nav col-12">
+     <div class="col nav-item  h4 m-3  ">
+      <a class="nav-link  active" href="attendance.html">Attendance</a>
+     </div>
+     <div class="col nav-item  m-3">
+      <a class="nav-link active text-warning h3" aria-current="page" href="#">Home</a>
+     </div>
+     <div class=" col nav-item  m-3">
+      <a class="nav-link active h4" aria-current="page" href="profile.html">Profile</a>
+     </div>
+     <div class=" col nav-item  m-3">
+      <a class="nav-link active  h4" aria-current="page" href="report.html">Reports</a>
+     </div>
+     <div class=" col nav-item  m-3">
+      <a class="nav-link active h4" aria-current="page" href="adminpanel.html">Admin Panel</a>
+     </div>
+     <div class=" col nav-item  m-3 ">
+      <a class="nav-link btn btn-lg btn-danger btn-outline-danger text-white " id="logout">Log Out</a>
+     </div>
+   </div>
+  </div>
+</nav>
+<div class="text-center" id="text">
+  <p class=" text-white d-none d-xl-block text-uppercase"> Welcome in Elshnhab Company </p>
+  <p class=" text-warning d-none d-xl-block text-uppercase "> we are happy to serve you</p>
+</div>
+<div class="container-fluid">
+  <img src="../img/coner2.jpg" class="img-fluid mb-4" id="cover" alt="Responsive image">
+  <div  class="jumbotron blockquote breadcrumb   w-75 m-auto my-5 " id="qut"  >
+      <p class=" h1 text-center  text-info">"The road to success and the road to failure are almost exactly the same."</p> 
+      <p class="ml-5 blockquote-footer text-start h3 text-dark ">Colin R. Davis </p>
+  </div>
+  <div class="row mt-3">
+     <div class="col-12 col-lg-6">
+          <div class=" ml-3 m-3 p-3" style="background-color: #F08080;">
+              <p class="h1 text-primary  text-center text-capitalize"><strong>mostafa elshnhab  company</strong></p>
+          </div>
+          <div class=" ml-3 m-3 p-3 " style="background-color: #FAFAD2;">
+            <div class="text-start">
+              <p class="text-capitalize text-secondary h4 "><strong>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                Modi asperiores eveniet officiis 
+                recusandae dolores numquam laboriosam at, corporis ad a, 
+                cupiditate nihil molestias quibusdam nulla, quis qui veritatis vitae quidem.</strong> </p>
+            </div>
+        </div>
+        <div class=" ml-3 m-3 p-3" style="background-color: #ADD8E6;">
+          <p class="text-capitalize text-black h4 "><strong>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+            Modi asperiores eveniet officiis 
+            recusandae dolores numquam laboriosam at, corporis ad a, 
+            cupiditate nihil molestias quibusdam nulla, quis qui veritatis vitae quidem.</strong> </p>
+      </div>
+     </div>
+
+
+     <div class="d-none d-lg-block mt-3 col-lg-6" >
+      <img class="rounded-top img-fluid" src="../img/cover1.jpg" >
+     </div>
+  </div>
+ 
+  <footer class="text-center text-lg-start  text-muted" id="footer">
+    <section
+      class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom"
+    >
+      <div class="me-5 d-none d-lg-block">
+      <span class="h4 text-white ">Get connected with us on social networks:</span>
+      </div>
+      <div>
+        <a href="" class="me-4 text-reset ">
+          <i class="fa fa-facebook-f text-white fa-2x"></i>
+        </a>
+        <a href="" class="me-4 text-reset">
+          <i class="fa fa-twitter text-white fa-2x" ></i>
+        </a>
+        <a href="" class="me-4 text-reset">
+          <i class="fa fa-google text-white fa-2x"></i>
+        </a>
+        <a href="" class="me-4 text-reset">
+          <i class="fa fa-instagram text-white fa-2x"></i>
+        </a>
+        <a href="" class="me-4 text-reset">
+          <i class="fa fa-linkedin text-white fa-2x"></i>
+        </a>
+        <a href="" class="me-4 text-reset">
+          <i class="fa fa-github text-white fa-2x"></i>
+        </a>
+      </div>
+    </section>
+  
+    <section class="">
+      <div class="container text-center text-md-start mt-5">
+        <div class="row mt-3">
+          <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+            <h5 class="text-uppercase fw-bold mb-4 text-warning">
+              <i class="fas fa-gem me-3"></i>Elshnhab Company
+            </h5>
+            <p class="text-white">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+              Cumque ducimus voluptate enim veniam assumenda eligendi aut reprehenderit.
+            </p>
+          </div>
+          <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+            <h5 class="text-uppercase fw-bold mb-4 text-warning">
+              pages links
+            </h5>
+            <p>
+              <a href="../sign-in/index.html" class=" text-white">Login</a>
+            </p>
+            <p>
+              <a href="../regester/index.html" class=" text-white">Regester</a>
+            </p>
+            <p>
+              <a href="profile.html" class=" text-white">Profile</a>
+            </p>
+            <p>
+              <a href="#" class=" text-white">Home</a>
+            </p>
+          </div>
+          <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+            <h5 class="text-uppercase fw-bold mb-4 text-warning">
+              Contact
+            </h5>
+            <p><i class="fa fa-home me-3 text-white"></i><span class="text-info"> Elmahala Elkopra, mohebstret, Eg</span></p>
+            <p>
+              <i class="fa fa-envelope me-3 text-white"></i>
+           <span class="text-info"> mostafaelshnhab11@gmail.com</span>
+            </p>
+            <p><i class="fa fa-phone me-3 text-white"></i><span class="text-info">01552518561</span> </p>
+            <p><i class="fa fa-whatsapp me-3 text-white"></i><span class="text-info">01009642687</span> </p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05);">
+      <p class="mt-5 mb-3 text-muted ">&copy; Mostafa Elshnhab</p>
+    </div>
+  </footer>
+  
+  
+</div>
+
+  </body>
+</html>
