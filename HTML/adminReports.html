@@ -9,8 +9,143 @@
     <link href="../css/bootstrap.css" rel="stylesheet" />
     <link href="../css/font-awesome.css" rel="stylesheet" />
     <link href="../CSS/adminReportsStyle.css" rel="stylesheet" />
-</head>
+    <link href="../CSS/font-awesome.css" rel="stylesheet" />
+    <link rel="icon" href="../Images/3.png">
+    <title>Reports Page</title>
+    <style>
+        #mainNav
+      {
+        height: 80px;
+        background-color: rgb(39, 69, 94);
+      }
+      #supNave
+      {
+        height: 60px;
+        background-color: rgb(95, 134, 167);
+      }
+      #card1
+      {
+          margin-top:100px;
+      }
+      </style>
 
+<script>
+    window.addEventListener("load",function()
+    {
+        var supNave= document.getElementById("reportContainer");
+        var headers=document.getElementsByClassName('che');
+        var logout=document.getElementById("logout")
+          logout.addEventListener("click",function(){
+          localStorage.login="false";
+          localStorage.removeItem("username");
+          window.location.replace("../index.html");
+        })
+        jsarray = JSON.parse(sessionStorage.getItem("jsArray"));
+                    var xhr = new XMLHttpRequest();
+                    xhr.open("get", 'http://localhost:3000/users');
+                xhr.onload = function() {
+                    arr = JSON.parse(xhr.responseText);
+                    var tr="";
+                    var tr2="";
+                    var tr3="";
+                    var tr4="";
+                    var tr5="";
+                    var emptype=""
+                    var arr2=[];
+                    var time=""
+                        var attendanctime =new Array(arr.length).fill(0);
+                         var latetime =new Array(arr.length).fill(0);
+                         var absencetime=new Array(arr.length).fill(0);
+                         var excusetims=new Array(arr.length).fill(0);
+                    for (let i = 0; i < arr.length; i++) {
+                      $.getJSON(`http://localhost:3000/reports/?userid=${arr[i].id}`, function(json) {
+                        arr2=json;
+                        for (let g = 0; g < arr2.length; g++) {
+                              attendanctime[i] = attendanctime[i]+ arr2[g].attendance;
+                              latetime[i] =latetime[i] + arr2[g].late
+                              absencetime[i] =absencetime[i] + arr2[g].absencetim
+                              excusetims[i]=excusetims[i] +arr2[g].excuse 
+                              time =arr2[g].time  
+                              
+                        }
+                        var fullname =(arr[i].fname).charAt(0).toUpperCase()+(arr[i].fname).slice(1)+" "+(arr[i].lname).charAt(0).toUpperCase()+(arr[i].lname).slice(1);
+                        switch (arr[i].flag) {
+                           case 0:
+                               emptype="Just Employee";
+                               break;
+                            case 1:
+                                emptype="Sub Admin";
+                                break;
+                            case 2:
+                                emptype="Admin";
+                               break;
+                       }
+                        if (!(latetime[i]===0)) {
+                            tr3 += `<td> <p class="h5 text-secondary"> ${fullname}</p></td>`;
+                            tr3 += `<td> <p class="h5 text-primary"> ${latetime[i]}</p></td></tr>`;
+                            document.getElementById('tbody3').innerHTML = tr3;
+                        }
+                        if(!(excusetims[i]===0))
+                        {
+                           tr4 += `<td> <p class="h5 text-secondary"> ${fullname}</p></td>`;
+                           tr4 += `<td> <p class="h5 text-primary"> ${excusetims[i]}</p></td></tr>`;
+                           document.getElementById('tbody4').innerHTML = tr4;
+                        }
+                        tr += "<t>";
+                        tr += `<td> <p class="h5 text-secondary"> ${fullname}</p></td>`;
+                        tr += `<td> <p class="h5 text-primary" > ${attendanctime[i]}</p></td>`;
+                        tr += `<td> <p class="h5 text-info"> ${latetime[i]}</p></td>`;
+                        tr += `<td> <p class="h5 text-primary"> ${absencetime[i]}</p></td></tr>`;
+                        document.getElementById('tbody').innerHTML = tr;
+                        tr2 += `<td> <p class="h5 text-secondary"> ${fullname}</p></td>`;
+                        tr2 += `<td> <p class="h5 text-primary" > ${attendanctime[i]}</p></td>`;
+                        tr2 += `<td> <p class="h5 text-info"> ${latetime[i]}</p></td>`;
+                        tr2 += `<td> <p class="h5 text-primary"> ${excusetims[i]}</p></td>`;
+                        tr2 += `<td> <p class="h5 text-danger"> ${absencetime[i]}</p></td>`;
+                        tr2 += `<td> <p class="h5 text-secondary"> ${time}</p></td></tr>`;
+                        document.getElementById('tbody2').innerHTML = tr2;
+                        tr5 += `<td> <p class="h5 text-secondary"> ${fullname}</p></td>`;
+                        tr5 += `<td> <p class="h5 text-info"> ${arr[i].address}</p></td>`;
+                        tr5 += `<td> <p class="h5 text-info"> ${arr[i].age}</p></td>`;
+                        tr5 += `<td> <p class="h5 text-info"> ${arr[i].email}</p></td>`;
+                        tr5 += `<td> <p class="h5 text-secondary"> ${emptype}</p></td></tr>`;
+                        document.getElementById('tbody5').innerHTML = tr5;
+                      })
+                    }//end of for loop
+                };//end of onload function
+                    xhr.send(); //sends the request to the server.
+                    supNave.addEventListener("click",function (e) {
+                        for (let i = 0; i < headers.length; i++) {
+                         var elmentclasslist=headers[i].className.split(' ');
+                            if (headers[i]==e.target) {
+                                for (let y = 0; y < elmentclasslist.length; y++) {
+                                    if (!(elmentclasslist[y]=="active")) {
+                                        headers[i].classList.add('active') 
+                                    }
+                                    if (!(elmentclasslist[y]=="h3")) {
+                                        headers[i].classList.remove('h4') 
+                                        headers[i].classList.add('h3') 
+                                    }
+                                }   
+                            }
+                            else
+                            {
+                                for (let z = 0; z < elmentclasslist.length; z++) {
+                                   if (elmentclasslist[z]=='active') {
+                                    headers[i].classList.remove('active') 
+                                   }
+                                   if (elmentclasslist[z]=='h3') {
+                                    headers[i].classList.remove('h3') 
+                                    headers[i].classList.add('h4') 
+                                   }
+                                }
+                            }
+                            
+                        }
+                    })
+      } )//end of load            
+</script>
+</head>
 <body>
     <div class="container">
         <nav>
@@ -43,15 +178,7 @@
             </ul>
         </nav>
 
-        <section class="main">
-            <div class="main-top">
-                <h1> Redirecting to reports...</h1>
-                <i class="fas fa-user-cog"></i>
-            </div>
-
-         </section>
-    </div>
-  
+        
 </body>
 
 </html>
