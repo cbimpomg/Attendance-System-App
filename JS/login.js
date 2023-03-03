@@ -32,6 +32,7 @@ var ObjEmployee=[
 ]
 window.localStorage.setItem("Admin",JSON.stringify({username:"Admin",passwd:"admin"}))
 
+
 function generateRandomString(length) {
     let result = '';
     const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
@@ -97,7 +98,12 @@ function registerEmployee()
         Email:newEmail,
         Age:newAge,
         Admin:true,
-        secuiryMan:true
+        secuiryMan:true,
+        Att_times:0, 
+        Late_times:0,
+        Absent_times:0,
+        Att_at:"time"
+
     }
   
     // var datauser=JSON.parse(localStorage.getItem(newUsername)).username
@@ -114,8 +120,10 @@ function registerEmployee()
     sendMail(newEmail)
 
 window.localStorage.setItem(newUsername,JSON.stringify(newEmployee))
+
 window.location.assign("../HTML/home.html")
 
   return
 }
+
 
