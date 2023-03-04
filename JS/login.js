@@ -20,34 +20,7 @@ inputs.forEach(input => {
 	input.addEventListener("blur", remcl);
 });
 
-window.localStorage.setItem("Admin",JSON.stringify({username:"Admin",passwd:"admin"}))
 
-
-function generateRandomString(length) {
-    let result = '';
-    const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
-    for (let i = 0; i < length; i++) {
-      result += characters.charAt(Math.floor(Math.random() * characters.length));
-    }
-    return result;
-  }
-  // Generate a random unique code
-  const code = generateRandomString(6);
-  
-
-
-function sendMail(email){
-    Email.send({
-        SecureToken : "4e21e031-af20-4fe9-b33f-a52ded0dcd07",
-        To : email,
-        From : "ITI_AttendanceSystem_jsProject@gmail.com",
-        Subject : "UserName and Password",
-        Body : `username:${generateRandomString(5)} \npassword: ${generateRandomString(6)}\n
-        Please, don't share this information!`
-    }).then(
-      message => alert(message + email)
-    );
-}
 
 var currentUser=""
 document.getElementById("loginsubmit").addEventListener("click", function(event){
@@ -97,78 +70,3 @@ document.getElementById("loginsubmit").addEventListener("click", function(event)
   
   
 });
-function registerEmployee()
-{
-     
-    var newUsername=document.getElementById("newUsername").value
-    var newPasswd=document.getElementById("newPassword").value
-    var newLastname=document.getElementById("newLastname").value
-    var newEmail=document.getElementById("newEmail").value
-    var newFirstname=document.getElementById("newFirstname").value
-    var newAge=document.getElementById("age").value
-    var address=document.getElementById("address").value
-    var job=document.getElementById("job").value
-     newEmployee={
-        username:newUsername,
-        passwd:newPasswd,
-        firstname:newFirstname,
-        lastname:newLastname,
-        Email:newEmail,
-        Job:job,
-        Address:address,
-        Age:newAge,
-        Admin:false,
-        secuirtyMan:false,
-        Att_times:0, 
-        Late_times:0,
-        Absent_times:0,
-        Att_at:"time"
- 
-    }
-  
-    // var datauser=JSON.parse(localStorage.getItem(newUsername)).username
-    // console.log(datauser)
-    // if(newUsername === (JSON.parse(localStorage.getItem(newUsername))).username)
-    // {
-    //     console.log("that username is already in use, please choose another")
-    //    return
-    // }else if (newPasswd.length <8)
-    // {
-    //     console.log("that username is already in use, please choose another")
-    //     return
-    // }
-    sendMail(newEmail)
-
-window.localStorage.setItem(newUsername,JSON.stringify(newEmployee))
-
-window.location.assign("../HTML/home.html")
-
-  return
-}
-
-// function assignAdmin(username)
-// {
- 
-//   var emp=JSON.parse(localStorage.getItem(username))
-//   emp["Admin"]=true
-//   window.localStorage.setItem(username,JSON.stringify(emp))
- 
-// }
- 
-function DefaultAdmin()
-{
-  var emp=JSON.parse(localStorage.getItem(localStorage.key(0)))
-  var empName=JSON.parse(localStorage.getItem(localStorage.key(0))).username
-  emp["Admin"]=true
-  window.localStorage.setItem(empName,JSON.stringify(emp))
-}
- 
-DefaultAdmin()
- 
-// function assignSecuitryMan(username)
-// {
-//   var emp=JSON.parse(localStorage.getItem(username))
-//   emp["secuirtyMan"]=true
-//   window.localStorage.setItem(username,JSON.stringify(emp))
- 
-// }
