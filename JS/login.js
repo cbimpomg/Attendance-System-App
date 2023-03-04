@@ -19,17 +19,7 @@ inputs.forEach(input => {
 	input.addEventListener("focus", addcl);
 	input.addEventListener("blur", remcl);
 });
-var ObjEmployee=[
-    {
-        username:"mahmoud",
-        passwd:"password25"
-    },
-    {
-        username:"tata",
-        passwd:"0123"
 
-    }
-]
 window.localStorage.setItem("Admin",JSON.stringify({username:"Admin",passwd:"admin"}))
 
 
@@ -64,7 +54,12 @@ function login()
 {
     var username=document.getElementById("username").value
     var passwd=document.getElementById("passwd").value
-         
+
+    
+  
+   
+
+
         if (username=="Admin" && passwd=="admin")
           {
             window.location.assign("../HTML/AdminPanel.html")
@@ -78,7 +73,21 @@ function login()
             window.sessionStorage.setItem("currentUser",username)
             console.log(username+"is logged in :) ")
             return
+          }else 
+          {
+            for (var i = 0; i < localStorage.length; i++)
+            {
+              if(username!==JSON.parse(localStorage.getItem(localStorage.key(i))).username)
+              {
+                document.getElementById('userspan').innerText ="Invaild username";
+              }else 
+              {
+                document.getElementById('passwordspan').innerText ="Invaild password";
+              }
+            }
+            return
           }
+
     
     console.log("incorrect username or password")
 }

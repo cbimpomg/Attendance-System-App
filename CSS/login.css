@@ -222,3 +222,6 @@ form{
     justify-content: center;
 }
 }
+div span {
+    color: red;
+}
