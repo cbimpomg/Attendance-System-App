@@ -101,21 +101,24 @@ function registerEmployee()
     var newEmail=document.getElementById("newEmail").value
     var newFirstname=document.getElementById("newFirstname").value
     var newAge=document.getElementById("age").value
-    
+    var address=document.getElementById("address").value
+    var job=document.getElementById("job").value
      newEmployee={
         username:newUsername,
         passwd:newPasswd,
         firstname:newFirstname,
         lastname:newLastname,
         Email:newEmail,
+        Job:job,
+        Address:address,
         Age:newAge,
-        Admin:true,
-        secuiryMan:true,
+        Admin:false,
+        secuirtyMan:false,
         Att_times:0, 
         Late_times:0,
         Absent_times:0,
         Att_at:"time"
-
+ 
     }
   
     // var datauser=JSON.parse(localStorage.getItem(newUsername)).username
@@ -138,3 +141,29 @@ window.location.assign("../HTML/home.html")
   return
 }
 
+// function assignAdmin(username)
+// {
+ 
+//   var emp=JSON.parse(localStorage.getItem(username))
+//   emp["Admin"]=true
+//   window.localStorage.setItem(username,JSON.stringify(emp))
+ 
+// }
+ 
+function DefaultAdmin()
+{
+  var emp=JSON.parse(localStorage.getItem(localStorage.key(0)))
+  var empName=JSON.parse(localStorage.getItem(localStorage.key(0))).username
+  emp["Admin"]=true
+  window.localStorage.setItem(empName,JSON.stringify(emp))
+}
+ 
+DefaultAdmin()
+ 
+// function assignSecuitryMan(username)
+// {
+//   var emp=JSON.parse(localStorage.getItem(username))
+//   emp["secuirtyMan"]=true
+//   window.localStorage.setItem(username,JSON.stringify(emp))
+ 
+// }
