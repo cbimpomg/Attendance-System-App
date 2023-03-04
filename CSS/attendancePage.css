@@ -101,3 +101,16 @@ main {
     }
   }
   
+  .welcomeHome h1{
+    font-size: 100px;
+    color:#EB455F;
+    text-shadow: #2B3467;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+  }
+
+  .welcomeHome h1:hover{
+    font-size: 100px;
+    color: #fff;
+    text-shadow: #2B3467;
+  }
+ 
