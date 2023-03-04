@@ -2,9 +2,6 @@
 <head>
   <title>Profile Page</title>
   <link href="../CSS/profile.css" rel="stylesheet" />
-
-
-
 </head>
 
 <body>
@@ -24,56 +21,34 @@
     <div class="row">
         <div class="my_div card_1">
                 <h2 id="name">Welcome to your profile page</h2>
-                <p id="username_">username</p>
+                <div id="username_"></div>
         </div>
         
         <div class="my_div card_2">
-                <div id="username_2">username
-                </div>
-
-                <h6>Email</h6>
-                <span id="email">
-                </span>
-
-                <h6>Address</h6>
-                <span id="address">
-                </span>
-
-                <h6>Age</h6>
-                <span id="age">
-                </span>
+                <div id="username_2">Username: </div>
+                <div id="gender">Gender: </div>
+                <div id="email">Email: </div>
+                <div id="address">Address: </div>
+                <div id="age">Age: </div>
+                <div id="job">Job: </div>
         </div>
 
         <div class="my_div card_3">
-            <h5>Last Login Time:</h5>
-            <span class="last_login_time">
-            </span>
+            <h3>Daily Report:</h3>
 
-            <h5>Attended at:</h5>
-            <span class="attended">
-            </span>
-
-            <h5>leaving at:</h5>
-            <span class="leaving">15:30</span>
-
-            <h5>status:</h5>
-            <span class="status">
-            </span>
-      </div>
-
+            <div id="attendance_time">Attended at: </div>
+            <div id="leaving_time">leaving at: </div>
+            <div id="status">status: </div>
+        </div>
 
           <div class="my_div card_4">
-            <h4>
-              Monthly Report
-            </h4>
-            <h5>Attendance Times:</h5><span class="att_times"></span>
-            
-            <h5>Late Times:</h5><span class="late_times"></span>
-
-            <h5>Absent Times:</h5><span class="atbs_times"></span>
-          </div>
+            <h3>Monthly Report</h3>
+            <div id="attendance_times">Attendance Times: </div>
+            <div id="late_times">Late Times: </div>
+            <div id="absent_times">Absent Times: </div>
       </div>
 </section>
+<script src="../JS/profile.js"></script>
 </body>
 
 </html>
