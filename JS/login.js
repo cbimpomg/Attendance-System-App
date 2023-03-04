@@ -40,7 +40,6 @@ document.getElementById("loginsubmit").addEventListener("click", function(event)
       if(username!==JSON.parse(localStorage.getItem(localStorage.key(i))).username)
       {
         document.getElementById('userspan').innerText ="Invaild username"; 
-        return
       }else {
         document.getElementById('userspan').innerText =""; 
         break;
@@ -58,11 +57,21 @@ document.getElementById("loginsubmit").addEventListener("click", function(event)
     {
       document.getElementById('passwordspan').innerText ="Invaild password"; 
     }else {
-      document.getElementById('passwordspan').innerText =""; 
+      document.getElementById('passwordspan').innerText ="";
+
+      console.log((JSON.parse(localStorage.getItem(username))).Admin)
+      if((JSON.parse(localStorage.getItem(username))).Admin===false)
+      {
+        window.location.assign("../HTML/Emp_home.html")
+        currentUser=username
+            window.sessionStorage.setItem("currentUser",username)
+            console.log(username+"is logged in :) ")
+      }else {
       window.location.assign("../HTML/home.html")
             currentUser=username
             window.sessionStorage.setItem("currentUser",username)
             console.log(username+"is logged in :) ")
+          }
     }
   }
 
