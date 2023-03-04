@@ -1,30 +1,23 @@
-for (var i = 0; i < localStorage.length; i++){
+
     var tr=""
     var tr2=""
     var tr3=""
     var tr4=""
     var tr5=""
-    var fullname=JSON.parse(localStorage.getItem(localStorage.key(i))).username
-    if (fullname=="Admin"){ 
-        continue
-    }
-
-    var latetimes=JSON.parse(localStorage.getItem(localStorage.key(i))).Late_times
-    var absenttime=JSON.parse(localStorage.getItem(localStorage.key(i))).Absent_times
-    var attendanceTime=JSON.parse(localStorage.getItem(localStorage.key(i))).Att_times
-    var time_attendance=JSON.parse(localStorage.getItem(localStorage.key(i))).Att_at
-    var age=JSON.parse(localStorage.getItem(localStorage.key(i))).Age
-    var email= JSON.parse(localStorage.getItem(localStorage.key(i))).Email
-    var gender= JSON.parse(localStorage.getItem(localStorage.key(i))).gender
-    var job = JSON.parse(localStorage.getItem(localStorage.key(i))).job
-    var address = JSON.parse(localStorage.getItem(localStorage.key(i))).address
+    var fullname=JSON.parse(localStorage.getItem(sessionStorage.getItem("currentUser"))).username
+    var latetimes=JSON.parse(localStorage.getItem(sessionStorage.getItem("currentUser"))).Late_times
+    var absenttime=JSON.parse(localStorage.getItem(sessionStorage.getItem("currentUser"))).Absent_times
+    var attendanceTime=JSON.parse(localStorage.getItem(sessionStorage.getItem("currentUser"))).Att_times
+    var time_attendance=JSON.parse(localStorage.getItem(sessionStorage.getItem("currentUser"))).Att_at
+    var age=JSON.parse(localStorage.getItem(sessionStorage.getItem("currentUser"))).Age
+    var email=JSON.parse(localStorage.getItem(sessionStorage.getItem("currentUser"))).Email
+    var gender=JSON.parse(localStorage.getItem(sessionStorage.getItem("currentUser"))).gender
+    var job = JSON.parse(localStorage.getItem(sessionStorage.getItem("currentUser"))).job
+    var address = JSON.parse(localStorage.getItem(sessionStorage.getItem("currentUser"))).address
     //all empolyees
-    tr += "<t>";
-    tr += `<td> <p class="h5 text-secondary"> ${fullname}</p></td>`;
-    tr += `<td> <p class="h5 text-primary" > ${attendanceTime}</p></td>`;
-    tr += `<td> <p class="h5 text-info"> ${latetimes}</p></td>`;
-    tr += `<td> <p class="h5 text-primary"> ${absenttime}</p></td></tr>`;
-    document.getElementById('tbody').innerHTML += tr;
+    
+    document.getElementById('username_2').innerHTML += fullname;
+    document.getElementById('email').innerHTML += email;
     //full report 
     tr2 += `<td> <p class="h5 text-secondary"> ${fullname}</p></td>`;
     tr2 += `<td> <p class="h5 text-primary" > ${attendanceTime}</p></td>`;
@@ -52,4 +45,3 @@ for (var i = 0; i < localStorage.length; i++){
 
    
    
-}

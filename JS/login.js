@@ -59,7 +59,7 @@ function sendMail(email){
     );
 }
 
-
+var currentUser=""
 function login()
 {
     var username=document.getElementById("username").value
@@ -68,11 +68,14 @@ function login()
         if (username=="Admin" && passwd=="admin")
           {
             window.location.assign("../HTML/AdminPanel.html")
+            currentUser=username
             console.log("hello admin man :) ")
             return
           }else if (username==(JSON.parse(localStorage.getItem(username))).username && passwd==(JSON.parse(localStorage.getItem(username))).passwd)
           {
             window.location.assign("../HTML/home.html")
+            currentUser=username
+            window.sessionStorage.setItem("currentUser",username)
             console.log(username+"is logged in :) ")
             return
           }
@@ -125,5 +128,4 @@ window.location.assign("../HTML/home.html")
 
   return
 }
-
 
