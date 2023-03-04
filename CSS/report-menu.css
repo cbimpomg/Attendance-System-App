@@ -133,6 +133,7 @@
   text-align: center;
   transform: translateY(-50%);
   list-style: none;
+  align-items: start;
 }
 .My-nav ul li{
   position: relative;
@@ -162,10 +163,10 @@
 }
 .My-nav ul li a{
   font-family: 'georgia', sans-serif;
-  font-size: 5vh;
+  font-size: 6vh;
   text-transform: capitalize;
   line-height: 2;
-  font-weight: 300;
+  font-weight: 400;
   display: inline-block;
   position: relative;
   color: #fff;
@@ -174,8 +175,7 @@
 .My-nav ul li a:hover{
   text-decoration: none;
   border-radius: 30%;
-  color: #eff9a5;
-
+  color:#f3ff99;
 }
 .My-nav ul li a:after{
   display: block;
@@ -193,16 +193,53 @@
   width: 150%;
 }
 
-.logo{
+  .My-nav .fa{
+    color: #f3ff99;
+    position: relative;
+    width: 70px;
+    height: 40px;
+    top: 10px;
+    font-size: 40px;
     text-align: center;
-    display: flex;
-    margin: 10px 0 0 10px;
-    padding-bottom: 3rem;
   }
-.logo img{
-    width: 45px;
-    height: 45px;
-    border-radius: 50%;
+  
+  .My-nav .fa:hover{
+    color: white;
+    position: relative;
+    width: 70px;
+    height: 40px;
+    top: 10px;
+    font-size: 40px;
+    text-align: center;
+    transition: all 250ms linear;
+  }
+
+  .My-nav .fas{
+    color: #f3ff99;
+    position: relative;
+    width: 70px;
+    height: 40px;
+    top: 10px;
+    font-size: 30px;
+    text-align: center;
+  }
+  .fas .fa-sign-out-alt{
+    margin-right: 20px;
+  }
+  .My-nav .fas:hover{
+    color: #fff;
+    position: relative;
+    width: 70px;
+    height: 40px;
+    top: 10px;
+    font-size: 30px;
+    text-align: center;
+  }
+
+  .nav-item{
+    position: relative;
+    top: 12px;
+    margin-left: 10px;
   }
 .menu-icon:checked ~ .My-nav  ul li {
   pointer-events: auto;
