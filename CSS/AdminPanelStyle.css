@@ -54,7 +54,7 @@ nav:hover{
   font-size: 18px;
   text-transform: uppercase;
 }
-a{
+a:not(.profile-btn){
   position: relative;
   width: 280px;
   font-size: 14px;

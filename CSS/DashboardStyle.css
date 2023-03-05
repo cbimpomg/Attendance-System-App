@@ -39,7 +39,7 @@ nav:hover{
 .logo{
   text-align: center;
   display: flex;
-  margin: 10px 0 0 10px;
+  margin: 5px 0 0 10px;
   padding-bottom: 3rem;
 }
 
@@ -54,7 +54,7 @@ nav:hover{
   font-size: 18px;
   text-transform: uppercase;
 }
-a{
+a:not(.profile-btn){
   position: relative;
   width: 280px;
   font-size: 14px;
@@ -156,6 +156,7 @@ a:hover i{
   background: transparent;
   border: 1px solid var(--navy);
 }
+
 .users .card button:hover{
   background: var(--navy);
   color: var(--white);
