@@ -76,7 +76,7 @@ nav .fas{
   margin-left: 10px;
 }
 a:hover{
-  background:var(--blue);
+  background:var(--creamy);
 }
 a:hover i{
   color: var(--navy);
