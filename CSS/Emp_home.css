@@ -74,3 +74,8 @@ body
 .welcome_img:hover{
    scale: 1.2;
  }
+ .logo{
+    float: right;
+    height: 7vh;
+    margin-right: 0vh;
+ }
