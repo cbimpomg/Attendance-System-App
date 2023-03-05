@@ -84,10 +84,11 @@ body
    margin-top: 60vh;
    width: 105vh;
    height: 50vh;
+   scale: 1.2;
    transition: all 3s;
 }
 .welcome_img:hover{
-   scale: 1.2;
+   scale: 1;
  }
  .logo{
     float: right;
