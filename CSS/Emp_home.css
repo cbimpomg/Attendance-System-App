@@ -1,3 +1,12 @@
+:root {
+    --navy: #2B3467;
+    --red: #EB455F;
+    --blue: #BAD7E9;
+    --creamy: #FCFFE7;
+    --lightgrey: rgb(226, 226, 226);
+    --white: #fff;
+  }
+
 body,html{
      /* The image used */
      background-image: url("../Images/homeImg.jpg");
@@ -32,17 +41,23 @@ body
     padding: 14px 16px;
     text-decoration: none;
     font-size: 17px;
-    width: 50vh;
+    width: 35vh;
   }
   
   .topnav a:hover {
-    background-color: #ddd;
+    background-color: var(--creamy);
     color: black;
   }
   
   .topnav a.active {
     background-color: #EB455F;
     color: white;
+  }
+  
+  
+.topnav a.active:hover {
+    background-color: var(--creamy);
+    color:black;
   }
   
   .topnav .icon {
@@ -67,7 +82,7 @@ body
    margin-right: 100vh;
    margin-left: -35vh;
    margin-top: 60vh;
-   width: 100vh;
+   width: 105vh;
    height: 50vh;
    transition: all 3s;
 }
