@@ -89,7 +89,7 @@ function registerEmployee()
 
 window.localStorage.setItem(username,JSON.stringify(newEmployee))
 
-window.location.assign("../HTML/Emp_home")
+window.location.assign("../HTML/Emp_home.html")
 
   return
 }
