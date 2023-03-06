@@ -25,6 +25,26 @@
 ### Emplyee profile
 ![Employee profile](https://user-images.githubusercontent.com/118731723/223160608-2ce27016-d68d-4092-9ec6-8b9728ae383d.gif)
 
+### Admin home page
+![Admin home page](https://user-images.githubusercontent.com/118731723/223200841-bee207dc-5c60-4f5d-a1b7-2d4284ecb43c.gif)
+
+### Confirm attendence page
+![attendence page](https://user-images.githubusercontent.com/118731723/223201464-95a8b0bd-6931-4d93-9885-e740129d31d0.gif)
+
+### Admin dashboard
+![dashboard](https://user-images.githubusercontent.com/118731723/223205653-7a7462cb-9ae5-475e-9b18-9eca941f7d55.gif)
+
+### Admin Reports
+![reports](https://user-images.githubusercontent.com/118731723/223207004-46145a15-2f99-4f61-8455-1963db1a2afc.gif)
+
+### Admin Panel
+![admin panel](https://user-images.githubusercontent.com/118731723/223214913-505fa3b9-8717-4cc9-9b7c-a6678e00e0fc.gif)
+
+### Setting page
+![setting](https://user-images.githubusercontent.com/118731723/223215495-598a5b6e-f443-479b-b2f5-abe11260d6fc.gif)
+
+
+
 ## Demo 
 - video or gif
 
