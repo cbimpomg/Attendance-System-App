@@ -81,7 +81,7 @@ function registerEmployee()
         Att_times:0, 
         Late_times:0,
         Absent_times:0,
-        Att_at:"time"
+        Att_at:time
  
     }
   
