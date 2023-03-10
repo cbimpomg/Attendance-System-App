@@ -7,7 +7,18 @@
   - Bootstrap
 
 ### Features
--
+- This is an Attendance System APP for organizations. The system allows new users to sign-up for one time and then they can log in each time they want to open the website.
+- We have three roles for users: Admin, Attendance Employee, Employees. 
+#### Admin
+- The Admin can take attendance for different employees, and can view different Admin Reports
+- He/she can view the profile page for different employees
+- The Admin is the first user to sign up.
+#### Attendance Employee
+- The attendance Employee is the employee responsible for the attendance for all employees and he/she can confirm attendace for different employees.
+- The Attendance Employee is the second member to sign up.
+#### Employees
+- The nomral user would be able to confirm attendace only for him/herself.
+- He/she would be able to view their daily reports as well as their monthly reports.
 
 ## PREVIEW LINK
   -link deployment 
