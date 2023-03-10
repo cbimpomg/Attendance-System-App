@@ -33,7 +33,7 @@ If the user has already signed up, then he would be able to log-in via this page
 ![login form](https://user-images.githubusercontent.com/118731723/223162697-a17a6578-92db-4f32-81b1-c162a84ea642.gif)
 
 ### Employee home page
-Once the employee is logged in, his home page would show up like that:
+Once the employee is logged in, his home page will show up like that:
 ![Untitled design (4)](https://user-images.githubusercontent.com/118731723/223157285-d7247d25-08c6-44d6-8cb8-4717e5e2f21a.gif)
 
 ### Emplyee profile
@@ -41,16 +41,19 @@ Employee profile has the daily and monthly reports as well as the employee's pro
 ![Employee profile](https://user-images.githubusercontent.com/118731723/223160608-2ce27016-d68d-4092-9ec6-8b9728ae383d.gif)
 
 ### Admin home page
-The
+The Admin user is having a home page different from the usual user.
 ![Admin home page](https://user-images.githubusercontent.com/118731723/223200841-bee207dc-5c60-4f5d-a1b7-2d4284ecb43c.gif)
 
 ### Confirm attendence page
+The Admin can confirm attendance by entering the user name and confirm his attendance. 
 ![attendence page](https://user-images.githubusercontent.com/118731723/223201464-95a8b0bd-6931-4d93-9885-e740129d31d0.gif)
 
 ### Admin dashboard
+In addition to Confirm attendance page and profile page, the admin is having a dashboard page. This page shows the profiles of attendee as well as some overall daily statistics.
 ![dashboard](https://user-images.githubusercontent.com/118731723/223205653-7a7462cb-9ae5-475e-9b18-9eca941f7d55.gif)
 
 ### Admin Reports
+This page shows the reports for Admin, so that he can keep track of each employee as well as the overall performance from the whole employees to know the absentees and the late employees.
 ![reports](https://user-images.githubusercontent.com/118731723/223207004-46145a15-2f99-4f61-8455-1963db1a2afc.gif)
 
 ### Admin Panel
