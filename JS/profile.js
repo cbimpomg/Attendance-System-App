@@ -1,10 +1,9 @@
 
 var fullname=JSON.parse(localStorage.getItem(sessionStorage.getItem("currentUser"))).username
-var gender=JSON.parse(localStorage.getItem(sessionStorage.getItem("currentUser"))).gender
 var age=JSON.parse(localStorage.getItem(sessionStorage.getItem("currentUser"))).Age
 var email=JSON.parse(localStorage.getItem(sessionStorage.getItem("currentUser"))).Email
 var address = JSON.parse(localStorage.getItem(sessionStorage.getItem("currentUser"))).Address
-//var job = JSON.parse(localStorage.getItem(sessionStorage.getItem("currentUser"))).job
+var job = JSON.parse(localStorage.getItem(sessionStorage.getItem("currentUser"))).Job
 
 var latetimes=JSON.parse(localStorage.getItem(sessionStorage.getItem("currentUser"))).Late_times
 var absenttime=JSON.parse(localStorage.getItem(sessionStorage.getItem("currentUser"))).Absent_times
@@ -19,8 +18,7 @@ document.getElementById('username_2').innerHTML += fullname;
 document.getElementById('email').innerHTML += email;
 document.getElementById('age').innerHTML += age;
 document.getElementById('address').innerHTML += address;
-document.getElementById('gender').innerHTML += gender;
-document.getElementById('job').innerHTML += "Non-priviliged Employee";
+document.getElementById('job').innerHTML += job;
 
 //daily report
 document.getElementById('attendance_time').innerHTML += time_attendance;
