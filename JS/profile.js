@@ -25,11 +25,11 @@ document.getElementById('attendance_time').innerHTML += time_attendance;
 document.getElementById('leaving_time').innerHTML += '15:30';
 if (time_attendance === "Not yet")
     {
-      document.getElementById('status').innerHTML += 'Not in the office'
+      document.getElementById('status').innerHTML += "Not in the office"
     }
  else
  {
-      document.getElementById('status').innerHTML += 'Present Now' 
+      document.getElementById('status').innerHTML += "Present Now"
  }
 
 //monthly report
