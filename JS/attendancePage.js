@@ -38,7 +38,7 @@ function attendance()
 
   }else 
    {
-    emp['Att_at']=time
+    emp['Att_at']= Absent
     emp['Absent_times']=emp['Absent_times']+1;
     window.localStorage.setItem(attendanceUser,JSON.stringify(emp))
     console.log((JSON.parse(localStorage.getItem(attendanceUser))).Absent_times++)
