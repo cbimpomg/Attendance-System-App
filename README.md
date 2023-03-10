@@ -67,8 +67,6 @@ This page contain admin inforamtion.
 
 
 
-## Demo 
-- video or gif
 
 # Authors
 <a href="https://github.com/NadaMarei">- Nada Marei.</a> 
