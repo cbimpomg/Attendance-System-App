@@ -8,15 +8,15 @@
 
 ### Features
 - This is an Attendance System APP for organizations. The system allows new users to sign-up for one time and then they can log in each time they want to open the website.
-- We have three roles for users: Admin, Attendance Employee, Employees. 
-#### Admin
+- We have three roles for users: Admin, Attendance Employee, and Employees. 
+#### 1- Admin
 - The Admin can take attendance for different employees, and can view different Admin Reports
 - He/she can view the profile page for different employees
 - The Admin is the first user to sign up.
-#### Attendance Employee
+#### 2- Attendance Employee
 - The attendance Employee is the employee responsible for the attendance for all employees and he/she can confirm attendace for different employees.
 - The Attendance Employee is the second member to sign up.
-#### Employees
+#### 3- Employees
 - The nomral user would be able to confirm attendace only for him/herself.
 - He/she would be able to view their daily reports as well as their monthly reports.
 
@@ -24,19 +24,24 @@
   -link deployment 
 
 ## Screenshots
-### Registration form 
+### Registration form
+This would appear for new users to sign-up for the system. 
 ![registration form](https://user-images.githubusercontent.com/118731723/223162268-9a31d832-4433-4324-b11b-b7231f17c4a8.gif)
 
 ### Login form
+If the user has already signed up, then he would be able to log-in via this page
 ![login form](https://user-images.githubusercontent.com/118731723/223162697-a17a6578-92db-4f32-81b1-c162a84ea642.gif)
 
 ### Employee home page
+Once the employee is logged in, his home page would show up like that:
 ![Untitled design (4)](https://user-images.githubusercontent.com/118731723/223157285-d7247d25-08c6-44d6-8cb8-4717e5e2f21a.gif)
 
 ### Emplyee profile
+Employee profile has the daily and monthly reports as well as the employee's profile information like name, mail, address, ...etc.
 ![Employee profile](https://user-images.githubusercontent.com/118731723/223160608-2ce27016-d68d-4092-9ec6-8b9728ae383d.gif)
 
 ### Admin home page
+The
 ![Admin home page](https://user-images.githubusercontent.com/118731723/223200841-bee207dc-5c60-4f5d-a1b7-2d4284ecb43c.gif)
 
 ### Confirm attendence page
