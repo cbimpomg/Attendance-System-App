@@ -69,4 +69,6 @@ This page contain admin inforamtion.
 ## Demo 
 - video or gif
 
+## Authors
+<a href="https://github.com/NadaMarei">-Nada Marei.</a> <a href="">-Mohamed Sharif.</a> <a href="">-Mahmoud Abdelwahab.</a>
 
