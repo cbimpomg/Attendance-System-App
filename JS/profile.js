@@ -23,7 +23,14 @@ document.getElementById('job').innerHTML += job;
 //daily report
 document.getElementById('attendance_time').innerHTML += time_attendance;
 document.getElementById('leaving_time').innerHTML += '15:30';
-document.getElementById('status').innerHTML += ''
+if (time_attendance === ""Not yet")
+    {
+      document.getElementById('status').innerHTML += 'Not in the office'
+    }
+ else
+ {
+      document.getElementById('status').innerHTML += 'Present Now' 
+ }
 
 //monthly report
 document.getElementById('attendance_times').innerHTML += attendanceTime;
