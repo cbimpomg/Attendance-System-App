@@ -57,9 +57,11 @@ This page shows the reports for Admin, so that he can keep track of each employe
 ![reports](https://user-images.githubusercontent.com/118731723/223207004-46145a15-2f99-4f61-8455-1963db1a2afc.gif)
 
 ### Admin Panel
+This page contain employee attendence list with employee profile cards.
 ![admin panel](https://user-images.githubusercontent.com/118731723/223214913-505fa3b9-8717-4cc9-9b7c-a6678e00e0fc.gif)
 
 ### Setting page
+This page contain admin inforamtion.
 ![setting](https://user-images.githubusercontent.com/118731723/223215495-598a5b6e-f443-479b-b2f5-abe11260d6fc.gif)
 
 
