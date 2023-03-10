@@ -21,7 +21,8 @@
 - He/she would be able to view their daily reports as well as their monthly reports.
 
 ## PREVIEW LINK
-  -link deployment 
+  - https://attendence-system-iti.netlify.app/
+  - https://mahmoudmohamed22.github.io/Attendance-System-App/
 
 ## Screenshots
 ### Registration form
