@@ -16,8 +16,8 @@ for (var i = 0; i < localStorage.length; i++){
     var age=JSON.parse(localStorage.getItem(localStorage.key(i))).Age
     var email= JSON.parse(localStorage.getItem(localStorage.key(i))).Email
     var gender= JSON.parse(localStorage.getItem(localStorage.key(i))).gender
-    var job = JSON.parse(localStorage.getItem(localStorage.key(i))).job
-    var address = JSON.parse(localStorage.getItem(localStorage.key(i))).address
+    var job = JSON.parse(localStorage.getItem(localStorage.key(i))).Job
+    var address = JSON.parse(localStorage.getItem(localStorage.key(i))).Address
     //all empolyees
     tr += "<t>";
     tr += `<td> <p class="h5 text-secondary"> ${fullname}</p></td>`;
