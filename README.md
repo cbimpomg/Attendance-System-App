@@ -38,7 +38,7 @@ Once the employee is logged in, his home page will show up like that:
 ![Untitled design (4)](https://user-images.githubusercontent.com/118731723/223157285-d7247d25-08c6-44d6-8cb8-4717e5e2f21a.gif)
 
 ### Emplyee profile
-Employee profile has the daily and monthly reports as well as the employee's profile information like name, mail, address, ...etc.
+Employee profile has the daily and monthly reports as well as the employee's profile information like name, mail, address, ...etc. If he/she attends between 9 am to 10 am, he/she considers attending (active). Between 10 am to 12 pm, he/she is considered late. After noon he/she is considered Absent. 
 ![employee profile (2)](https://user-images.githubusercontent.com/118731723/224471083-c57b760d-cb11-4ab5-98f4-ada506063478.gif)
 
 ### Admin home page
