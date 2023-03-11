@@ -39,7 +39,7 @@ Once the employee is logged in, his home page will show up like that:
 
 ### Emplyee profile
 Employee profile has the daily and monthly reports as well as the employee's profile information like name, mail, address, ...etc.
-![Employee profile](https://user-images.githubusercontent.com/118731723/223160608-2ce27016-d68d-4092-9ec6-8b9728ae383d.gif)
+![employee profile (2)](https://user-images.githubusercontent.com/118731723/224471083-c57b760d-cb11-4ab5-98f4-ada506063478.gif)
 
 ### Admin home page
 The Admin user is having a home page different from the usual user.
