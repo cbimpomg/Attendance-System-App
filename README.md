@@ -55,7 +55,7 @@ In addition to Confirm attendance page and profile page, the admin is having a d
 
 ### Admin Reports
 This page shows the reports for Admin, so that he can keep track of each employee as well as the overall performance from the whole employees to know the absentees and the late employees.
-![reports](https://user-images.githubusercontent.com/118731723/223207004-46145a15-2f99-4f61-8455-1963db1a2afc.gif)
+![Admin reports](https://user-images.githubusercontent.com/118731723/224472941-ffb2a3a8-1f25-4696-85ae-6927da4a89ca.gif)
 
 ### Admin Panel
 This page contain employee attendence list with employee profile cards.
