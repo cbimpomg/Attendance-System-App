@@ -42,7 +42,7 @@ Employee profile has the daily and monthly reports as well as the employee's pro
 ![employee profile (2)](https://user-images.githubusercontent.com/118731723/224471083-c57b760d-cb11-4ab5-98f4-ada506063478.gif)
 
 ### Admin home page
-The Admin user is having a home page different from the usual user.
+The Admin user is having a home page different from the usual user. To login as admin use --> username:Admin || password:admin
 ![Admin home page](https://user-images.githubusercontent.com/118731723/223200841-bee207dc-5c60-4f5d-a1b7-2d4284ecb43c.gif)
 
 ### Confirm attendence page
