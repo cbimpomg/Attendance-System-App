@@ -47,7 +47,7 @@ for (var i = 0; i < localStorage.length; i++){
      tr5 += `<td> <p class="h5 text-info"> ${address}</p></td>`;
      tr5 += `<td> <p class="h5 text-info"> ${age}</p></td>`;
      tr5 += `<td> <p class="h5 text-info"> ${email}</p></td>`;
-     tr5 += `<td> <p class="h5 text-secondary"> ${gender}</p></td></tr>`;
+     tr5 += `<td> <p class="h5 text-secondary"> ${job}</p></td></tr>`;
      document.getElementById('tbody5').innerHTML += tr5;
 
    
